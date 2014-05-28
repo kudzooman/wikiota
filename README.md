@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 == README
 
 Purpose
@@ -35,3 +36,9 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+=======
+wikiota
+=======
+
+Wikiota is specifically designed as an internal wiki for 1iota employees.
+>>>>>>> 419146a5ab48efbae1586afc52041304030046ed
