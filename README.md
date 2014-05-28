@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 == README
 
 Purpose
@@ -41,4 +41,4 @@ wikiota
 =======
 
 Wikiota is specifically designed as an internal wiki for 1iota employees.
->>>>>>> 419146a5ab48efbae1586afc52041304030046ed
+
