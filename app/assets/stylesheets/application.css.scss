@@ -1,20 +1,52 @@
-/*
-
-** require_self
-
-*/
-
 @import "bourbon";
 @import "neat";
+@import "welcome";
 
 body {
-  background: #4e4e4e
+  background: #4e4e4e;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 200px
 }
 
 .box {
   background: #eeeeee;
   size: 100px;
-  margin: 20px;
+  margin: 500px 50px 50px 500px;
+  text-align: center;
+  color: ffffff;
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
   }
+
+  .nav_box {
+  background: black;
+  height: 40px;
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 50px 500px;
+  }
+
+  .nav {
+  background: #eeeeee;
+  size: 40px;
+  margin: 10px 10px 10px 10px;
+  text-align: center;
+  color: ffffff;
+  height: 40px;
+  width: 80px;
+  padding: 30;
+  border-radius: 2px;
+  }
+
+  .posts {
+  border: solid;
+  margin: 5px;
+  padding: 5px;
+  height: 200px;
+}
 
 
