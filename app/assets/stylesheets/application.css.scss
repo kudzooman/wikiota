@@ -2,6 +2,13 @@
 @import "neat";
 @import "welcome";
 
+
+p#index-title {
+  text-align: center;
+  font-size: 50px;
+  color: black;
+}
+
 body {
   background: #4e4e4e;
 }
@@ -9,7 +16,9 @@ body {
 h1 {
   color: white;
   text-align: center;
-  font-size: 200px
+  font-size: 250px;
+  font-family: Helvetica;
+  margin: 5px;
 }
 
 .box {
@@ -19,34 +28,32 @@ h1 {
   text-align: center;
   color: ffffff;
   height: 200px;
-  width: 200px;
-  border-radius: 200px;
+  width: 300px;
+  border-radius: 50px;
+  font-size: 35px;
+  font-family: Helvetica;
+  padding: 30px 5px 5px 5px;
   }
 
-  .nav_box {
+  .nav_bar {
   background: black;
   height: 40px;
   margin: 5px 5px 5px 5px;
   padding: 5px 5px 50px 500px;
   }
 
-  .nav {
-  background: #eeeeee;
-  size: 40px;
-  margin: 10px 10px 10px 10px;
-  text-align: center;
-  color: ffffff;
-  height: 40px;
-  width: 80px;
-  padding: 30;
-  border-radius: 2px;
-  }
+ 
 
-  .posts {
-  border: solid;
-  margin: 5px;
-  padding: 5px;
-  height: 200px;
-}
+ .button {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    font: bold 12px/25px Arial, sans-serif;
+    color: black;
+    background: white;
+ }
 
 
