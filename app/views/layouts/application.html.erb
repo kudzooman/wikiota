@@ -7,26 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="nav_bar">
-  <ul>
-    <li class="nav" style="display: inline" class="button"><button><%= link_to "Home", welcome_index_path %></button></li>
-    <li class="nav" style="display: inline" class="button"><button><%= link_to "About", welcome_about_path %></button></li>
-    <li class="nav" style="display: inline" class="button" a href="http://www.1iota.com/"><button><%= link_to "1iota"%></a><button></li>
-  </ul>
+  <div class="container">
 
-  <div class="pull-right user-info">
-    <% if current_user %>
-      Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign In", new_user_session_path %> or 
-      <%= link_to "Sign Up", new_user_registration_path %>
-    <% end %>
+      <ul class="nav nav-tabs">
+        <li><%= link_to "Wikiota", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "List", articles_path %></li>
+
+      <div class="pull-right user-info nav nav-tabs">
+        <% if current_user %>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </div>
+
+      </ul>
+
+      <%= yield %>
   </div>
-
-
-</div>
-
-<%= yield %>
 
 </body>
 </html>

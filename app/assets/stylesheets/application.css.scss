@@ -1,59 +1,20 @@
-@import "bourbon";
-@import "neat";
-@import "welcome";
+@import "bootstrap";
 
+.user-info {
+  margin-top: 2px;
+}
 
-p#index-title {
+h1 {
+  font-size: 100px;
   text-align: center;
-  font-size: 50px;
-  color: black;
+}
+
+.jumbotron {
+  height: 1000px;
+  background: #ddd;
 }
 
 body {
   background: #4e4e4e;
 }
-
-h1 {
-  color: white;
-  text-align: center;
-  font-size: 250px;
-  font-family: Helvetica;
-  margin: 5px;
-}
-
-.box {
-  background: #eeeeee;
-  size: 100px;
-  margin: 500px 50px 50px 500px;
-  text-align: center;
-  color: ffffff;
-  height: 200px;
-  width: 300px;
-  border-radius: 50px;
-  font-size: 35px;
-  font-family: Helvetica;
-  padding: 30px 5px 5px 5px;
-  }
-
-  .nav_bar {
-  background: black;
-  height: 40px;
-  margin: 5px 5px 5px 5px;
-  padding: 5px 5px 50px 500px;
-  }
-
- 
-
- .button {
-    display: inline-block;
-    position: relative;
-    margin: 10px;
-    padding: 0 20px;
-    text-align: center;
-    text-decoration: none;
-    font: bold 12px/25px Arial, sans-serif;
-    color: black;
-    background: white;
- }
-
 

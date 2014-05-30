@@ -1,0 +1,11 @@
+<h1>List of Wikiotas</h1>
+<% @articles.each do |article| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <p><%= link_to article.title, article %></p>
+      </h4>
+    </div>
+  </div>
+
+<% end %>
