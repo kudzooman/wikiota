@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :contributors, through: :articles
 
+  def role?(base_role)
+    role == base_role.to_s
+  end
+
 end
