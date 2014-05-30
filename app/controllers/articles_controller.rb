@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params.require(:article).permit(:title, :body))
+    @article = current_user.articles.build(params.require(:article).permit(:title, :body))
       if @article.save
         redirect_to @article
       else

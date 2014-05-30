@@ -1,5 +1,8 @@
 <h1><%= @article.title %></h1>
 
-<%= link_to "Edit", edit_article_path(@article), class: 'btn btn-success' %>
+<small>
+  submitted <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name %><br/>
 
 <p><%= @article.body %></p>
+
+<%= link_to "Edit", edit_article_path(@article), class: 'btn btn-success' %>

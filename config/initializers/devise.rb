@@ -13,8 +13,6 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'app25190086@heroku.com'
 
-  config.action_mailer.raise_delivery_errors = true
-
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
