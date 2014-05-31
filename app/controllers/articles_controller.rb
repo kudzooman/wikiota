@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(params.require(:article).permit(:title, :body))
+    @article = current_user.articles.build(article_params)
       authorize @article
       if @article.save
         redirect_to @article
@@ -30,12 +30,20 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update_attributes(params.require(:article).permit(:title, :body))
+    if @article.update_attributes(article_params)
       authorize @article
+      flash[:notice] = "Article was updated"
       redirect_to @article
     else
+      flash[:error] = "There was an error saving the article. Please try again."
       render :edit
     end
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :body)
   end
 
 end

@@ -1,10 +1,10 @@
-<h1><%= @article.title %></h1>
+<h1><%= markdown @article.title %></h1>
 
   <small>
     submitted <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name %><br/>
   </small>
 
-<p><%= @article.body %></p>
+<p><%= markdown @article.body %></p>
 
   <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-success' %>
 
