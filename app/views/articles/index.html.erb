@@ -1,6 +1,6 @@
-<h1>List of Wikiotas</h1>
+<h2>List of Wikiotas</h2>
   <% if policy(Article.new).create? %>
-    <%= link_to "New Wikiota Article", new_article_path, class: 'btn btn-success' %>
+    <%= link_to "New Wikiota Article", new_article_path, class: 'btn btn-danger' %>
   <% end %>
   <% @articles.each do |article| %>
     <div class="media">

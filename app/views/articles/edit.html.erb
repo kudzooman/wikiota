@@ -1,13 +1,15 @@
+<h1></h1>
+
 <div class="col-md-12">
   <%= form_for @article do |f| %>
     <div class="form-group">
       <%= f.text_field :title, class: 'form-control', placeholder: "Enter wikiota title here" %>
     </div>
      <div class="form-group">
-        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Start writing wikiota article here." %>
+        <%= f.text_area :body, rows: 24, class: 'form-control', placeholder: "Start writing wikiota article here." %>
       </div>
       <div class="form-group">
-        <%= f.submit "Save", class: 'btn btn-success' %>
+        <%= f.submit "Save", class: 'btn btn-danger' %>
       </div>
     <% end %>
   </div>

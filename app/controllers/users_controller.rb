@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def update
     if current_user.update_attributes(user_params)
       flash[:notice] = "User information updated"
-      redirect_to edit_registration_path(current_user)
+      redirect_to edit_user_registration_path(current_user)
     else
       render "devise/registrations/edit"
     end

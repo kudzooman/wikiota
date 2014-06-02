@@ -5,11 +5,33 @@
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 150px;
   text-align: center;
+  color: #6e6e6e;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+}
+
+h3 {
+  text-align: center;
+  color: #fff;
 }
 
 body {
-  background: #4e4e4e;
+  background: #6e6e6e;
 }
 
+.form-control {
+  background-color: #E6E6E6;
+}
+
+.row {
+  background-color: #E6E6E6;
+}
+
+.btn {
+  border-radius: 1px;
+}
