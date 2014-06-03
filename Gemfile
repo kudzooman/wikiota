@@ -49,6 +49,11 @@ gem 'redcarpet'
 
 gem 'friendly_id', '~> 5.0.0'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
