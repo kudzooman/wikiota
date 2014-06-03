@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
-    authorize @articles
+    @search = Article.search do
+      fulltext params[:search]
+    end
+
+    @articles = @search.results
+    # authorize @articles
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     if request.path != article_path(@article)
       redirect_to @article, status: :moved_permanently
     end
@@ -19,7 +23,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
       authorize @article
-      if @article.save
+      if @article.save!
         redirect_to @article
       else
         render :new
@@ -27,12 +31,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     authorize @article
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
     if @article.update_attributes(article_params)
       authorize @article
       flash[:notice] = "Article was updated"

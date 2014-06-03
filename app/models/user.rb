@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-  has_many :articles
-  has_many :contributors, through: :articles
+  has_many :contributors
+  has_many :articles, through: :contributors
 
   def role?(base_role)
     role == base_role.to_s

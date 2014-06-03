@@ -9,7 +9,7 @@
   <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-danger' %>
 
   <small>
-    edited <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name %><br/>
+    edited <%= time_ago_in_words(@article.updated_at) %> ago by <%= @article.user.name %><br/>
   </small>
 
 

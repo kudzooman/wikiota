@@ -54,6 +54,12 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
+gem 'sunspot_rails'
+
+group :development do
+  gem 'sunspot_solr'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
