@@ -1,37 +1,63 @@
 @import "bootstrap";
 
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #4e4e4e;
+
 .user-info {
   margin-top: 2px;
 }
 
-h1 {
+h11 {
   font-size: 150px;
   text-align: center;
-  color: #6e6e6e;
+  color: $primary-color;
 }
 
 h2 {
-  text-align: center;
-  color: #fff;
+  text-align: left;
+  color: $primary-color;
 }
 
 h3 {
   text-align: center;
-  color: #fff;
+  color: $primary-color;
+}
+
+h4 {
+  color: $primary-color;
 }
 
 body {
-  background: #6e6e6e;
+  font: 100% $font-stack;
+  background: #327681;
+}
+
+p {
+  padding: 10px 0px 0px 10px;
+  text-align: left;
+}
+
+p2 {
+  text-align: center;
 }
 
 .form-control {
   background-color: #E6E6E6;
 }
 
-.row {
-  background-color: #E6E6E6;
-}
 
 .btn {
-  border-radius: 1px;
+  border-radius: 6px;
 }
+
+#searchform input {
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+}
+
+
+
+
+
+

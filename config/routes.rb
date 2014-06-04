@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:update]
 
+  resources :subscriptions
+
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'

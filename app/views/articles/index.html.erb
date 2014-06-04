@@ -1,20 +1,15 @@
+
+
 <h2>List of Wikiotas</h2>
 
-<%= form_tag articles_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-
   <% if policy(Article.new).create? %>
-    <%= link_to "New Wikiota Article", new_article_path, class: 'btn btn-danger' %>
+    <%= link_to "New Wikiota Article", new_article_path, class: "btn btn-warning" %>
   <% end %>
   <% @articles.each do |article| %>
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
-          <p><%= link_to article.title, article %></p>
+          <p2><%= link_to article.title, article %></p2>
         </h4>
       </div>
     </div>

@@ -4,30 +4,41 @@
   <title>WikiotaDev</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://js.stripe.com/v1', 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
-  
-      <ul class="nav nav-tabs">
-        <li><%= link_to "Wikiota", root_path, class: 'btn btn-danger btn-sm' %></li>
-        <li><%= link_to "About", about_path, class: 'btn btn-danger btn-sm' %></li>
-        <li><%= link_to "List", articles_path, class: 'btn btn-danger btn-sm' %></li>
+  <div class="container">
+      <ul class="nav nav-pills">
+        <li><%= link_to "Wikiota", root_path, class: 'btn btn-primary btn-sm' %></li>
+        <li><%= link_to "About", about_path, class: 'btn btn-info btn-sm' %></li>
+        <li><%= link_to "Premium", subscriptions_path, class: 'btn btn-success btn-sm' %></li>
+        <li><%= link_to "Wiki List", articles_path, class: 'btn btn-warning btn-sm' %></li>
+
+  <div id="searchform" class="search">
+  <li><%= form_tag articles_path, :method => :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "search field" %>
+    <%= submit_tag "Search", class: 'btn btn-default', :name => nil %>
+  </li>
+  <% end %>
+  </div>
 
       <div class="pull-right user-info">
         <% if current_user %>
           Hello <%= (current_user.name || current_user.email) %>!
-          <%= link_to edit_user_registration_path, class: 'btn btn-danger btn-sm' do %>
+          <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
             <span class="glyphicon glyphicon-user"></span>
           <% end %>
 
-          <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-sm' do %>
+          <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-warning btn-sm' do %>
             <span class="glyphicon glyphicon-log-out"></span>
           <% end %>
-
+      </div>
+      <div class="pull-right">
         <% else %>
-          <%= link_to "Sign in", new_user_session_path, class: 'btn btn-danger' %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-danger' %>
+          <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-warning' %>
         <% end %>
       </div>
 
@@ -54,5 +65,5 @@
       </div>
   </div>
 
-</body>
+  </body>
 </html>

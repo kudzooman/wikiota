@@ -1,15 +1,18 @@
-<h2><%= markdown @article.title %></h2>
 
-  <small>
-    submitted <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name %><br/>
-  </small>
+<div class="container">
+  <h2><%= markdown @article.title %></h2>
 
-<h3><%= markdown @article.body %></h3>
+    <small>
+      submitted <%= time_ago_in_words(@article.created_at) %> ago by <%= @article.user.name %><br/>
+    </small>
 
-  <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-danger' %>
+  <h3><%= markdown @article.body %></h3>
 
-  <small>
-    edited <%= time_ago_in_words(@article.updated_at) %> ago by <%= @article.user.name %><br/>
-  </small>
+    <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-warning' %>
+
+    <small>
+      edited <%= time_ago_in_words(@article.updated_at) %> ago by <%= @article.user.name %><br/>
+    </small>
+</div>
 
 
