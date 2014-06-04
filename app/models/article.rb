@@ -2,7 +2,9 @@ class Article < ActiveRecord::Base
   extend FriendlyId
 
   belongs_to :user
-  has_many :contributors, through: :user
+
+  has_many :contributors
+  has_many :users, through: :contributors
 
   friendly_id :title, use: [:slugged, :history]
 

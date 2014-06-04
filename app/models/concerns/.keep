@@ -1,0 +1,8 @@
+# Aricle.first.users
+# => [array of users connected to aricle via collaborator model]
+
+# User.first.aricles
+# => [array of aricles connected to user via collaborator]
+
+# Aricle.first.user
+# => User # aricle creator
