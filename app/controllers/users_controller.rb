@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   before_filter :authenticate_user!
 
   def update
@@ -8,6 +9,10 @@ class UsersController < ApplicationController
     else
       render "devise/registrations/edit"
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private

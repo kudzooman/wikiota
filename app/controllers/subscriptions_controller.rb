@@ -1,7 +1,7 @@
 class SubscriptionsController < ApplicationController
 
   def index
-  
+  @plan = Plan.visible_to(current_user)
   end
 
   def new

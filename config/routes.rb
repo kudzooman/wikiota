@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:update]
+  resources :users, only: [:show, :index, :update]
 
-  resources :subscriptions
+ resources :subscriptions
 
   get 'about' => 'welcome#about'
+
+  # get 'subscriptions' => 'subscriptions#new'
 
   root to: 'welcome#index'
 
