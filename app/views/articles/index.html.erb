@@ -1,17 +1,19 @@
 
 
-<h2>List of Wikiotas</h2>
-
-  <% if policy(Article.new).create? %>
-    <%= link_to "New Wikiota Article", new_article_path, class: "btn btn-warning" %>
-  <% end %>
-  <% @articles.each do |article| %>
+  <div class="page-heading">
+    <h2>List of Wikiotas</h2>
+</div>
+    <% @articles.each do |article| %>
     <div class="media">
       <div class="media-body">
         <h4 class="media-heading">
           <p2><%= link_to article.title, article %></p2>
         </h4>
-      </div>
     </div>
-
+  </div>
   <% end %>
+
+
+  <% if policy(Article.new).create? %>
+          <%= link_to "New Wikiota Article", new_article_path, class: "btn btn-warning" %>
+        <% end %>

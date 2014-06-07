@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index, :update]
 
+  resources :charges, only: [:new, :create]
+
  resources :subscriptions
 
   get 'about' => 'welcome#about'

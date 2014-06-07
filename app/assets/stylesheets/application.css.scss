@@ -1,10 +1,10 @@
 @import "bootstrap";
 
 $font-stack:    Helvetica, sans-serif;
-$primary-color: #4e4e4e;
+$primary-color: #343434;
 
 .user-info {
-  margin-top: 2px;
+  margin-top: -40px;
 }
 
 h11 {
@@ -29,7 +29,7 @@ h4 {
 
 body {
   font: 100% $font-stack;
-  background: #327681;
+  background: #286471;
 }
 
 p {
@@ -37,23 +37,45 @@ p {
   text-align: left;
 }
 
-p2 {
-  text-align: center;
+.media-heading {
+  text-align: left;
+  background-color: #E5EBED;
+  height: 30px;
+  border-radius: 6px;
+  padding: 5px 5px 5px 10px;
+  margin: 10px 100px 5px 0px;
+}
+
+.page-heading {
+  background-color: #E5EBED;
+  border-radius: 6px;
+  margin-right: 100px;
 }
 
 .form-control {
-  background-color: #E6E6E6;
+  background-color: #E5EBED;
 }
 
 
 .btn {
   border-radius: 6px;
+  font-size: 15px;
 }
 
 #searchform input {
-  width: 100px;
-  height: 40px;
+  width: 120px;
+  height: 46px;
   font-size: 15px;
+  margin-top: -2px;
+}
+
+.col-xs-6 {
+  padding: 40px;
+  background-color: #E5EBED;
+  border-radius: 6px;
+  margin: 25px 0px 25px 0px;
+  border-style: solid;
+  border-width: 15px;
 }
 
 

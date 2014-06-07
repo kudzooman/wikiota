@@ -21,3 +21,5 @@
 # Ignore stripe config
 /config/initializers/stripe.rb
 solr/development
+
+.env

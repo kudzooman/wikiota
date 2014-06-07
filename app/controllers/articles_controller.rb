@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
     end
 
     @articles = @search.results
+    #@articles = policy_scope(@articles)
     # authorize @articles
   end
 

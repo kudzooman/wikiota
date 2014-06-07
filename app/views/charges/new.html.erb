@@ -1,0 +1,12 @@
+
+<%= form_tag charges_path do %>
+  <%= hidden_field_tag :amount, 100 %>
+  <h4>Click the button!</h4>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>" 
+  data-description="Premium Wiki ($1)" 
+  data-amount="100">
+  </script>
+<% end %>
+
+<h11>Become a <strong>PREMIUM Wikiota</strong> member for only $1</h11>
