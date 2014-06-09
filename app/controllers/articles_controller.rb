@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
   def index
-    @search = Article.search do
-      fulltext params[:search]
-    end
+    #@search = Article.search do
+    #  fulltext params[:search]
+    #end
 
-    @articles = @search.results
-    #@articles = policy_scope(@articles)
-    # authorize @articles
+    #@articles = @search.results
+    @articles = policy_scope(Article)
+    @articles = Article.visible_to(current_user)
+    #authorize @articles
   end
 
   def show
@@ -14,6 +15,7 @@ class ArticlesController < ApplicationController
     if request.path != article_path(@article)
       redirect_to @article, status: :moved_permanently
     end
+    authorize @article
   end
 
   def new

@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :contributors
+  has_many :contributors, dependent: :destroy # <- ??? is this right in case article is deleted ???
   has_many :users, through: :contributors
 
   friendly_id :title, use: [:slugged, :history]
@@ -11,6 +11,8 @@ class Article < ActiveRecord::Base
   #def should_generate_new_friendly_id?
   #  new_record?
   #end
+
+  scope :visible_to, ->(user) { user ? all : where(public: true) }
 
   searchable do
     text :title, :boost => 5
