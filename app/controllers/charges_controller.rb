@@ -20,7 +20,7 @@ class ChargesController < ApplicationController
 
     current_user.update_attribute(:role, "premium")
 
-    redirect_to root_url, flash: { notice: "Thanks for your payment, #{current_user.name}!" } # or wherever
+    redirect_to articles_path, flash: { notice: "Thanks for your payment, #{current_user.name}!" } # or wherever
 
     # Stripe will send back CardErrors, with friendly messages
     # when something goes wrong.

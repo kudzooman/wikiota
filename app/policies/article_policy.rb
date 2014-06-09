@@ -16,7 +16,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || user.role?
+    user.role?(:admin) || record.public? || (scope.user == user) || (record.users.include?(user))
   end
 
   def index?
@@ -24,6 +24,6 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def show?
-    record.public? || user.present?
+    true
   end
 end

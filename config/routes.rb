@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
 
- resources :subscriptions
-
   get 'about' => 'welcome#about'
 
   # get 'subscriptions' => 'subscriptions#new'

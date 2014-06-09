@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
   def index
-    #@search = Article.search do
-    #  fulltext params[:search]
-    #end
+    @search = Article.search do
+     fulltext params[:search]
+    end
 
-    #@articles = @search.results
-    @articles = policy_scope(Article)
-    @articles = Article.visible_to(current_user)
+    @articles = @search.results
+    # @articles = policy_scope(Article)
+     #@articles = Article.visible_to(current_user)
     #authorize @articles
   end
 
@@ -40,8 +40,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.friendly.find(params[:id])
+    authorize @article
     if @article.update_attributes(article_params)
-      authorize @article
       flash[:notice] = "Article was updated"
       redirect_to @article
     else

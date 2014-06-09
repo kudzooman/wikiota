@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604154810) do
+ActiveRecord::Schema.define(version: 20140609033214) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140604154810) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "slug"
+    t.boolean  "public",     default: true
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
@@ -43,12 +44,6 @@ ActiveRecord::Schema.define(version: 20140604154810) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
-
-  create_table "subscriptions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "stripe_customer_token"
-  end
 
   create_table "users", force: true do |t|
     t.string   "name"
