@@ -21,12 +21,13 @@ users = User.all
     )
 end
 
-
-User.first.update_attributes(
-  email: 'kudzooman@gmail.com',
-  password: 'helloworld',
-  )
+5.times do
+  Contributor.create(
+    user: users.sample
+    )
+end
 
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Article.count} articles created"
+puts "#{Contributor.count} contributors created"

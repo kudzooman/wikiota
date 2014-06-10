@@ -7,5 +7,9 @@ module ApplicationHelper
     (redcarpet.render text).html_safe
   end
 
+  def article_url_helper(article)
+    article = article
+  end
+
 
 end

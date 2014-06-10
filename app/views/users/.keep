@@ -1,0 +1,15 @@
+???? alternate users#index idea???
+
+
+<div class="page-heading">
+    <h2>List of Wikiota Members</h2>
+</div>
+    <% @users.each do |user| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <p2><%= link_to user.name, @articles %></p2>
+        </h4>
+    </div>
+  </div>
+  <% end %>

@@ -31,10 +31,13 @@ class ArticlesController < ApplicationController
       else
         render :new
       end
+    @article.user = current_user
   end
 
   def edit
     @article = Article.friendly.find(params[:id])
+    @users = User.all - [current_user, @article.user]
+    @contributor = Contributor.new
     authorize @article
   end
 
@@ -47,6 +50,19 @@ class ArticlesController < ApplicationController
     else
       flash[:error] = "There was an error saving the article. Please try again."
       render :edit
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    name = @article.name
+
+    authorize @article
+    if @article.destroy
+      flash[:notice] = "\"#{name}\" is gone forever."
+    else
+      flash[:error] = "Something went wrong. Try again."
+      render :show
     end
   end
 

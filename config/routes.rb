@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :articles
+  resources :articles do
+    resources :contributors, only: [:create, :destroy]
+  end
+   # nested route for contributors, only need create, destroy
+
 
   devise_for :users
 

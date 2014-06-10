@@ -1,0 +1,14 @@
+<div class="media">
+  <%= render locals: { article: article } %>
+  <%= link_to article, class: 'pull-left' %>
+
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= link_to (markdown article.title), article %>
+    </h4>
+    <small>
+      submitted <%= time_ago_in_words(article.created_at) %> ago by
+      <%= link_to article.user.name, article.user %><br/>
+    </small>
+  </div>
+</div>

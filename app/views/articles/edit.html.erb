@@ -8,11 +8,43 @@
      <div class="form-group">
         <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: "Start writing wikiota article here." %>
       </div>
+
+      <% if current_user.role?(:admin) || current_user.role?(:premium) %>
+        <div class="form-group">
+            <%= f.label :public, class: 'checkbox' do %>
+              <%= f.check_box :public, {:checked => true } %> Public Wiki
+        <% end %>
+      </div>
+    <% end %>
+
       <div class="form-group">
         <%= f.submit "Save", class: 'btn btn-warning' %>
       </div>
-      <div class="form-group">
-        <%= f.submit "Add Contributor", class: 'btn btn-info' %>
-    <% end %>
+
+    <% if current_user.role?(:admin) || current_user.role?(:premium) %>
+    <% @users.each do |user| %>
+    <%= form_for [@article, @contributor] do |f| %>
+      <div class="row bordered">
+        <div class="col-md-8">
+          <%= user.name %>
+        </div>
+        <%= f.hidden_field :article_id, value: @article.id %>
+        <%= f.hidden_field :user_id, value: user.id %>
+
+        <% if @articles.user.include?(user) %>
+          <% contributor = Contributor.where(user_id: user.id, article_id: @article.id).first %>
+        <div class="col-md-2">
+          <%= link_to "Remove", [@article, contributor], method: :delete, data: { confirm: "Are you sure you want to remove contributor?" }, class: 'btn btn-warning' %>
+          </div>
+        <% else %>
+          <div class="col-md-2">
+            <%= f.submit "Add", class: 'btn btn-info' %>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+  <% end %>
+<% end %>
+<% end %>
   </div>
 </div>
