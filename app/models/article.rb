@@ -19,6 +19,18 @@ class Article < ActiveRecord::Base
     text :body, :publish_month
   end
 
+  def last_user
+    if self.last_user_id
+      User.find(self.last_user_id)
+    else
+      nil
+    end
+  end
+
+  def last_user=(user)
+    last_user_id = user.id
+  end
+
   def publish_month
    created_at.strftime("%B %Y")
   end

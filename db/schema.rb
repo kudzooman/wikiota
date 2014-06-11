@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609033214) do
+ActiveRecord::Schema.define(version: 20140611033038) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20140609033214) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "slug"
-    t.boolean  "public",     default: true
+    t.boolean  "public",       default: true
+    t.integer  "last_user_id"
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"

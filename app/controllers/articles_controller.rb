@@ -24,14 +24,15 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(article_params)
+    @article = Article.new(article_params)
+      @article.user = current_user
       authorize @article
+      puts @article.user
       if @article.save!
         redirect_to @article
       else
         render :new
       end
-    @article.user = current_user
   end
 
   def edit
@@ -43,6 +44,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.friendly.find(params[:id])
+    @article.last_user= current_user
+
     authorize @article
     if @article.update_attributes(article_params)
       flash[:notice] = "Article was updated"
@@ -64,6 +67,7 @@ class ArticlesController < ApplicationController
       flash[:error] = "Something went wrong. Try again."
       render :show
     end
+    redirect_to articles_path
   end
 
   private

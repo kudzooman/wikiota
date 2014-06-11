@@ -11,7 +11,12 @@
     <%= link_to "Edit", edit_article_path(@article), class: 'btn btn-warning' %>
 
     <small>
-      edited <%= time_ago_in_words(@article.updated_at) %> ago by <%= @article.user.name %><br/>
+      edited <%= time_ago_in_words(@article.updated_at) %> ago by
+      <% if @article.last_user %>
+       <%= @article.last_user.name %><br/>
+      <% else %>
+        <%= @article.user.name %><br/>
+      <% end %>
     </small>
 </div>
 
