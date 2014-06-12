@@ -29,7 +29,6 @@ class Article < ActiveRecord::Base
 
   def last_user=(user)
     self.last_user_id = user.id
-
   end
 
   def publish_month
