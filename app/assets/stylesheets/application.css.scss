@@ -1,3 +1,5 @@
+
+
 @import "bootstrap";
 
 $font-stack:    Helvetica, sans-serif;
@@ -5,6 +7,14 @@ $primary-color: #343434;
 
 .user-info {
   margin-top: -40px;
+}
+
+.pages {
+  font-size: 20px;
+}
+
+.welcome {
+  font-size: 20px;
 }
 
 h11 {
@@ -19,12 +29,14 @@ h1 {
 }
 
 h2 {
+  font-size: 30px !important;
   text-align: left;
   color: $primary-color;
 }
 
 h3 {
-  text-align: center;
+  font-size: 20px;
+  text-align: left;
   color: $primary-color;
 }
 
@@ -34,12 +46,23 @@ h4 {
 
 body {
   font: 100% $font-stack;
-  background: #286471;
+  background: #355F6B;
 }
 
 p {
+  font-size: 15px;
   padding: 10px 0px 0px 10px;
   text-align: left;
+}
+
+
+a {
+  color: $primary-color;
+}
+
+a:hover {
+  color: #5bc0de;
+  text-decoration: none;
 }
 
 th {
@@ -50,10 +73,27 @@ td {
   font-size: 15px;
 }
 
+small {
+  font-size: 15px;
+}
+
 .media-heading {
+  font-size: 40px;
   text-align: left;
   background-color: #E5EBED;
-  height: 30px;
+  height: auto !important;
+  width: auto !important;
+  border-radius: 6px;
+  padding: 5px 5px 5px 10px;
+  margin: 10px 100px 5px 0px;
+}
+
+.media-body {
+  font-size: 25px;
+  text-align: left;
+  background-color: #E5EBED;
+  height: auto !important;
+  width: auto !important;
   border-radius: 6px;
   padding: 5px 5px 5px 10px;
   margin: 10px 100px 5px 0px;
@@ -67,6 +107,10 @@ td {
 
 .form-control {
   background-color: #E5EBED;
+}
+
+.form-group {
+  font-size: 20px;
 }
 
 
@@ -88,7 +132,14 @@ td {
   border-radius: 6px;
   margin: 25px 0px 25px 0px;
   border-style: solid;
-  border-width: 15px;
+  border-width: 10px;
+}
+
+table {
+  width: auto !important;
+  padding: 5px;
+  margin: 7px 0px 0px 0px;
+  background-color: #E5EBED;
 }
 
 

@@ -2,6 +2,14 @@ class UsersController < ApplicationController
   
   before_filter :authenticate_user!
 
+  def index
+    @search = User.search do
+     fulltext params[:search]
+     paginate(page: params[:page], per_page: 15)
+    end
+    @users = @search.results
+  end
+
   def update
     if current_user.update_attributes(user_params)
       flash[:notice] = "User information updated"

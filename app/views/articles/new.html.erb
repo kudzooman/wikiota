@@ -18,6 +18,13 @@
       <div class="form-group">
         <%= f.text_area :body, rows: 20, class: 'form-control', placeholder: "Start writing wikiota article here." %>
       </div>
+       <% if current_user.role?(:admin) || current_user.role?(:premium) %>
+      <div class="form-group">
+        <%= f.label :public, class: 'checkbox' do %>
+        <%= f.check_box :public, {:checked => true } %> Public Wiki
+      <% end %>
+      </div>
+    <% end %>
       <div class="form-group">
         <%= f.submit "Save Wikiota", class: 'btn btn-warning' %>
       </div>

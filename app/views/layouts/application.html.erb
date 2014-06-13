@@ -25,7 +25,7 @@
 
       <div class="pull-right user-info">
         <% if current_user %>
-          Hello <%= link_to (current_user.name || current_user.email), current_user %>!
+          <div class="welcome"> Hello <%= link_to (current_user.name || current_user.email), current_user %>
           <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
             <span class="glyphicon glyphicon-user"></span>
           <% end %>
@@ -33,6 +33,7 @@
           <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-warning btn-sm' do %>
             <span class="glyphicon glyphicon-log-out"></span>
           <% end %>
+        </div>
       </div>
       <div class="pull-right">
         <% else %>

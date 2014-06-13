@@ -16,14 +16,23 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.role?(:admin) || record.public? || (scope.user == user) || (record.users.include?(user))
+    user.present? && (user.role?(:admin) || (scope.user == user) || record.users.include?(user))
+  end
+
+  def edit?
+    update?
   end
 
   def index?
-    true
+    record.public? || update?
   end
 
   def show?
-    true
+    record.public?
   end
+
+  def destroy?
+    user.present? && (record.user == user || user.role?(:admin) || user.role?(:moderator))
+  end
+
 end

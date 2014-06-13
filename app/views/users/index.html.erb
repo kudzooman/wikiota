@@ -1,12 +1,19 @@
-<div class="page-heading">
+  <div class="page-heading">
     <h2>List of Wikiota Members</h2>
 </div>
-    <% @users.Article.all %>
-    <div class="media">
-      <div class="media-body">
-        <h4 class="media-heading">
-          <p2><%= link_to user.name, @articles %></p2>
-        </h4>
-    </div>
-  </div>
+
+<table class="table table-striped table-bordered">
+   <thead>
+      <tr>
+         <th>Members</th>
+      </tr>
+   </thead>
+   <tbody>
+    <% @users.each do |user| %>
+      <tr>
+         <td><%= link_to user.name(:id) %></td>
+      </tr>
+    <% end %>
+   </tbody>
+</table>
   
