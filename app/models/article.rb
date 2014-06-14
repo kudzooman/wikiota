@@ -35,5 +35,5 @@ class Article < ActiveRecord::Base
    created_at.strftime("%B %Y")
   end
 
-  default_scope { order('created_at DESC') }
+  default_scope { order('created_at ASC') }
 end

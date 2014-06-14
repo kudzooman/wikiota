@@ -6,12 +6,16 @@
    <thead>
       <tr>
          <th>Members</th>
+         <th># of Articles</th>
+         <th># of Contributions</th>
       </tr>
    </thead>
    <tbody>
     <% @users.each do |user| %>
       <tr>
-         <td><%= link_to user.name(:id) %></td>
+         <td><%= link_to user.name, user %></td>
+         <td>article#count</td>
+         <td>contrib#count</td>
       </tr>
     <% end %>
    </tbody>

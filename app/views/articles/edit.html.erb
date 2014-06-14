@@ -34,29 +34,36 @@
     </div>
   <% end %>
 
-  <% if current_user.role?(:admin) || current_user.role?(:premium) %>
-    <% @users.each do |user| %>
+
+
+  <table class="table table-striped table-bordered">
+   <thead>
+    <% if current_user.role?(:admin) || current_user.role?(:premium) %>
+      <tr>
+        <th>Wikiota Members</th>
+        <th colspan="2">Add/Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
       <%= form_for [@article, @contributor] do |f| %>
-        <div class="row bordered">
-          <div class="col-md-8">
-            <%= user.name %>
-          </div>
-        
+        <tr>
+          <td><%= user.name %></td>
+      
           <%= f.hidden_field :article_id, value: @article.id %>
           <%= f.hidden_field :user_id, value: user.id %>
 
+          <td>
           <% if @article.users.include?(user) %>
             <% contributor = Contributor.where(user_id: user.id, article_id: @article.id).first %>
-          <div class="col-md-2">
             <%= link_to "Remove", [@article, contributor], method: :delete, data: { confirm: "Are you sure you want to remove contributor?" }, class: 'btn btn-warning' %>
-            </div>
           <% else %>
-            <div class="col-md-2">
-              <%= f.submit "Add", class: 'btn btn-info' %>
-             </div>
+            <%= f.submit "Add", class: 'btn btn-info' %>
+          </td>
           <% end %>
-        </div>
+        <% end %>
       <% end %>
+      </tr>
     <% end %>
-  <% end %>
-</div>
+  </tbody>
+</table>
