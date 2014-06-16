@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @articles = Article.where(user: current_user)
+    @articles = Article.where(user: @user)
     @articles = @articles.visible_to(current_user)
   end
 

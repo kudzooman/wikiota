@@ -14,8 +14,8 @@
     <% @users.each do |user| %>
       <tr>
          <td><%= link_to user.name, user %></td>
-         <td>article#count</td>
-         <td>contrib#count</td>
+         <td><%= Article.where(user: user).count %></td>
+         <td><%= user.contributors.count %></td>
       </tr>
     <% end %>
    </tbody>

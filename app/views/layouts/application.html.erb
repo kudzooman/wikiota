@@ -18,7 +18,7 @@
 
   <div id="searchform" class="search">
   <li><%= form_tag articles_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "search field" %>
+    <%= text_field_tag :search, params[:search], placeholder: "wiki search here" %>
     <%= submit_tag "Search", class: 'btn btn-default', :name => nil %>
   </li>
   <% end %>

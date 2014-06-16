@@ -12,6 +12,8 @@ class Article < ActiveRecord::Base
   #  new_record?
   #end
 
+  default_scope { order('created_at DESC') }
+
   scope :visible_to, ->(user) { user ? all : where(public: true) }
 
   searchable do
@@ -35,5 +37,4 @@ class Article < ActiveRecord::Base
    created_at.strftime("%B %Y")
   end
 
-  default_scope { order('created_at ASC') }
 end

@@ -20,10 +20,14 @@
     <% @articles.each do |article| %>
       <tr>
          <td><%= link_to article.title, article %></td>
-         <td><%= article.contributors.name %></td>
+         <td>
+          <% article.contributors.each do| contributor| %>
+            <%= link_to contributor.user.name, contributor.user %><br>
+            <% end %>
+         </td>
          <td>
             <%= link_to "Edit", edit_article_path(article), class: 'btn btn-warning' %>
-            <%= link_to "Vaporize!", article, method: :delete, class: 'btn btn-danger', data: { confirm: 'Final answer? Cause this topic is about to be real gone.'} %>
+            <%= link_to "Delete", article, method: :delete, class: 'btn btn-danger', data: { confirm: 'Final answer? Cause this topic is about to be real gone.'} %>
          </td>
       </tr>
     <% end %>

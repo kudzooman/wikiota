@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
      paginate(page: params[:page], per_page: 15)
     end
     @articles = @search.results
-    # @articles = policy_scope(Article)
+    #@articles = policy_scope(Article)
      #@articles = Article.visible_to(current_user)
   end
 
@@ -71,7 +71,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :public)
   end
 
 end

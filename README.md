@@ -1,6 +1,10 @@
 
 == README
 
+**Things to add
+
+paranoid2 gem - to archive old or heavily edited wiki's. 
+
 Purpose
 
 Wikiota is a site that allows 1iota employees to create public and private Markdown-based wikis. 

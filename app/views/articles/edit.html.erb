@@ -24,14 +24,12 @@
     <% if current_user.role?(:admin) || current_user.role?(:premium) %>
       <div class="form-group">
         <%= f.label :public, class: 'checkbox' do %>
-        <%= f.check_box :public, {:checked => true } %> Public Wiki
+        <%= f.check_box :public %> Public Wiki
       <% end %>
       </div>
     <% end %>
 
-    <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-warning' %>
-    </div>
   <% end %>
 
 
@@ -56,7 +54,7 @@
           <td>
           <% if @article.users.include?(user) %>
             <% contributor = Contributor.where(user_id: user.id, article_id: @article.id).first %>
-            <%= link_to "Remove", [@article, contributor], method: :delete, data: { confirm: "Are you sure you want to remove contributor?" }, class: 'btn btn-warning' %>
+            <%= link_to "Remove", [@article, contributor], method: :delete, class: 'btn btn-warning' %>
           <% else %>
             <%= f.submit "Add", class: 'btn btn-info' %>
           </td>
